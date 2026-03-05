@@ -1,8 +1,14 @@
 #include <iostream>
-using namspace std;
+using namespace std;
 
-void input( int& hours24, int& minutes);
-void output( int hours, int minutes);
+void input( int& hours24, int& minutes){
+  cin >> hours24 >> minutes;
+}
+
+void output( int hours, int minutes){
+  cout << hours << ":" << minutes;
+}
+
 
 int main()
 {
@@ -12,7 +18,8 @@ int main()
   
 
   char ans = 'y'; 
-  while ('y' == ans || 'Y' == ans)
+  
+   while(ans == 'y'|| ans == 'Y')
   {
     cout << "Current time:\n";
     input(timeHours, timeMinutes);
@@ -26,10 +33,10 @@ int main()
 
     
     finishHours += finishMinutes / 60;
-    if(finishHours >= 24)
-	{
-	  finishHours %= 24;
-	  cout << "Completion time is in the day following the start time\n";
+    if(finishHours >= 24){
+	    finishHours %= 24;
+	    cout << "Completion time is in the day following the start time\n";
+
     }
 
     finishMinutes%= 60;
